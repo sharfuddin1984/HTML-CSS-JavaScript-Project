@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+<title>Download Form</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+	<style type="text/css">
+	.container{margin:25px auto;}
+	.form-group.required .control-label:after {
+	  content:"*";
+	  color:red;
+	}
+	hr {
+	  margin-top: 1rem;
+	  margin-bottom: 1rem;
+	  border: 0;
+	  border-top: 1px solid rgba(0, 0, 0, 0.1);
+	}
+	.modal-content{
+		background: #ebf4fb;
+		border-radius: 9px 9px 9px 9px;
+	}
+	.modal-header{border-radius:9px 9px 0px 0px;}
+	
+	.form-control  {
+		border: 1px solid #b2d6f0;
+		box-sizing: border-box;
+		border-radius: 25px;
+		background: #fff;
+		padding: 12px 20px!important;
+		font-size: 14px;
+	}
+	
+	</style>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"  crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+	<!-- Button trigger modal -->		
+	<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+			  <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"></path>
+			  <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"></path>
+			</svg>
+							Download
+	</button>
+	<!-- Modal -->
+	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header  bg-primary text-white">
+					<h6 class="modal-title" id="exampleModalLabel">Kindly state your purpose of downloading this resource.</h6>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form class="frm-download">
+						<div class="form-group required">
+							<label class="control-label">Usage type</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+						  <input type="radio" id="comercialID" name="customRadioInline1" class="custom-control-input">
+						  <label class="custom-control-label" for="comercialID">Commercial</label>
+						</div>
+						<div class="custom-control custom-radio custom-control-inline">
+						  <input type="radio" id="nonComercialID" name="customRadioInline1" class="custom-control-input">
+						  <label class="custom-control-label" for="nonComercialID">Non-commercial</label>
+						</div>
+						<hr>
+						<div class="form-group required">
+							<label class="control-label">Purpose</label>
+						</div>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="custom-control custom-checkbox">
+								  <input type="checkbox" class="custom-control-input" id="academiaID">
+								  <label class="custom-control-label" for="academiaID">Academia</label>
+								</div>
+								<div class="custom-control custom-checkbox">
+								  <input type="checkbox" class="custom-control-input" id="businessID">
+								  <label class="custom-control-label" for="businessID">Business</label>
+								</div>
+								<div class="custom-control custom-checkbox">
+								  <input type="checkbox" class="custom-control-input" id="govtUseID">
+								  <label class="custom-control-label" for="govtUseID">Govt Use</label>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="custom-control custom-checkbox">
+								  <input type="checkbox" class="custom-control-input" id="rndID">
+								  <label class="custom-control-label" for="rndID">R&D</label>
+								</div>
+								<div class="custom-control custom-checkbox">
+								  <input type="checkbox" class="custom-control-input" id="journalisticID">
+								  <label class="custom-control-label" for="journalisticID">Journalistic</label>
+								</div>
+								<div class="custom-control custom-checkbox">
+								  <input type="checkbox" class="custom-control-input" id="otherID">
+								  <label class="custom-control-label" for="otherID">Other</label>
+								</div>
+							</div>
+						</div>
+						<div class="mt-3">
+							<div class="form-group">							
+								<input type="name" class="form-control" id="nameID" placeholder="Name..">							
+							</div>
+							<div class="form-group">							
+								<input type="email" class="form-control" id="emailID" placeholder="Email..">							
+							</div>
+						</div>
+						<div class="text-center">
+							<button type="button" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
+				</div>				
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

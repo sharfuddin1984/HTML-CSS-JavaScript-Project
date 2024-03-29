@@ -1,0 +1,207 @@
+<!doctype html>
+<html>
+<title>Navigation menu</title>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" crossorigin="anonymous">
+	<style>
+	.nav-link{font-size:14px;}
+	
+	.label-container{
+	/*position: absolute;
+    right: 0;
+	margin: 10px;*/
+	z-index: 100;
+	min-width: 183px;  
+	/* animation: pulse-animation 2s infinite; */
+	border-radius: 4px;
+	/* box-shadow: 0 0 0 5px rgba(255, 221, 64); */	
+	}
+	#collapseOne{
+	 position: absolute;
+    z-index: 1000;
+    float: left;
+    min-width: 10rem;    
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    list-style: none;
+	}
+
+.blink{
+    color: #000;
+    font-weight: 700;
+    font-size: 2rem;
+    -webkit-animation: 1.5s infinite blinkingText;
+    animation: 1.5s infinite blinkingText;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 1px rgba(255, 221, 64, 0.8);
+  }
+  100% {
+      box-shadow: 0 0 0 20px rgba(255, 227, 97, 0);
+  }
+  
+}
+
+@media(max-width:990px){
+	.label-container{
+		right: 0px;
+	}	
+}
+
+.label-text{
+	color:#FFF;
+	background:rgba(51,51,51,0.5);
+	display:table-cell;
+	vertical-align:middle;
+	padding:10px;
+	border-radius:3px;
+  } 
+	
+  .rating {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;	
+	/* box-shadow: inset 0px 0px 3px #26304d; */
+	/* background-color: #26304d;     */
+	padding: 0px 10px;
+	/* border-top-left-radius: 4px;
+	border-top-right-radius: 4px; */
+  }
+  
+  .rating>input {
+  display: none;
+  }
+  
+  .rating>label {
+	position: relative;
+	font-size: 20px;
+	color: #FFD600;
+	cursor: pointer;   
+	padding: 0px 7px;
+	animation: blinkingLabel 1.5s infinite;
+}
+
+@keyframes blinkingLabel{
+	0%		{ color: white;}
+	25%		{ color: black;}
+	50%		{ color: white;}
+	75%		{ color: black;}
+	100%	{ color: white;}
+}
+  .rating>label::before {
+  content: "\2605";
+  position: absolute;
+  opacity: 0;
+  }
+  .rating>label:hover{
+  transform: scale(1.3);
+  transition: transform .2s;
+  }
+  
+  .rating>label:hover:before,
+  .rating>label:hover~label:before {
+  opacity: 1 !important;
+  }
+  
+  .rating>input:checked~label:before {
+  opacity: 1;
+  }
+  
+  .rating:hover>input:checked~label:before {
+  opacity: 0.4;
+  }
+  
+  @keyframes blinkingText{
+  0%, 100%, 50% {
+    background-color: #a9294f;
+}
+
+25%, 75% {
+    background-color: #ff0;
+}
+}
+	</style>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"  crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixedNavebar">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#"><img src="https://indiawris.gov.in/wris/assets/img/logo/logo.png"  class="img-fluid" style="width: 50px; height: auto; padding: 5px;" /></a>
+
+	<div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+		<ul class="navbar-nav bd-navbar-nav flex-row">
+		  <li class="nav-item active">
+			<a class="nav-link" href="#">Water Topics <span class="sr-only">(current)</span></a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Water Data Online</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">WRIS Tools</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">WIMS</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">WRIS Wiki</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Connect</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">Publications</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link" href="#">About WRIS</a>
+		  </li>
+		</ul>
+		<a class="navbar-brand" href="#"><img src="https://indiawris.gov.in/wris/assets/img/logo/nwic-logo.png" class="img-fluid" style="width:50px;height:auto; padding:5px;"/> </a>
+		
+		<div class="label-container blink">
+			<form name="frm-feedback">
+			  <div class="rating" data-toggle="collapse">
+				<input type="radio" name="rating" value="5" id="5" data-toggle="collapse" data-target="#collapseOne">
+				<label for="5">☆</label>
+				<input type="radio" name="rating" value="4" id="4" data-toggle="collapse" data-target="#collapseOne">
+				<label for="4">☆</label>
+				<input type="radio" name="rating" value="3" id="3" data-toggle="collapse" data-target="#collapseOne">
+				<label for="3">☆</label>
+				<input type="radio" name="rating" value="2" id="2" data-toggle="collapse" data-target="#collapseOne">
+				<label for="2">☆</label>
+				<input type="radio" name="rating" value="1" id="1" data-toggle="collapse" data-target="#collapseOne">
+				<label for="1">☆</label>
+			  </div>
+			  <div id="collapseOne" class="collapse p-3" style="background:#26304d;">
+				<div class="form-group">              
+				  <textarea class="form-control" id="feedbackID" rows="3" maxlength="50"
+					placeholder="Please enter comments here if any (Max 50 Characters)"  (keydown)="onKeydown($event)"></textarea>
+				</div>
+				<div class="text-right">
+				  <button class="btn btn-warning mr-2" (click)="resetFeedback()">Reset</button>
+				  <button class="btn btn-success" id="btnSubmit" type="submit" (click)="submitFeedback()">Submit</button>
+				</div>
+			  </div>
+			</form>
+		</div>				
+		
+		
+	</div>
+</nav>
+</div>
+
+<script>
+	$( document ).ready(function() {
+    $(".rating"
+	});
+</script>
+
+</body>
+</html>

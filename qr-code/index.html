@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR-Code - HTML | CSS | JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="qr-code">
+            <p>Enter your text or URL <span id="refresh-icon" onclick="refreshText()"><i class="fa-solid fa-rotate-right"></i></span></p>
+            <input type="text" placeholder="Text or URL" id="qrText">
+            <button onclick="generateQR()">Generate QR Code</button>
+
+            <div id="imgBox">
+                <img src="" id="qrImage"/>
+            </div>
+        </div>
+    </div>
+    <script>
+        let imgBox = document.getElementById("imgBox");
+        let qrImg = document.getElementById("qrImage");
+        let qrTxt = document.getElementById("qrText");
+        let refreshtxt = document.getElementById("refresh-icon");
+
+        function generateQR(){
+            if(qrTxt.value.length > 0){
+                qrImg.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrTxt.value
+                imgBox.classList.add("show-img");  
+                refreshtxt.style.display = "block";               
+            }else{
+                qrTxt.classList.add("error");   
+                qrTxt.style.borderColor = "red"; 
+                qrTxt.focus();           
+                setTimeout(() =>{
+                    qrTxt.classList.remove("error");
+                    qrTxt.style.borderColor = "";                    
+                },1000)
+            }
+        }
+        function refreshText(){
+            qrTxt.value = "";
+            qrImg.src = "";
+            qrTxt.focus();
+            refreshtxt.style.display = "none"; 
+        }
+    </script>
+</body>
+</html>
